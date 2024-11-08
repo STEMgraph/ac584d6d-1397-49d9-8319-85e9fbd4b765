@@ -1,0 +1,114 @@
+\begin{challenge}
+    \chatitle{Using the terminal-emulator to navigate the linux filesystem}
+    \begin{chadescription}
+    As you should know by now, we have to differentiate between `memory` and `storage`.
+    If you are not sure about the differences, please go back to the \href{https://www.github.com/STEMgraph/}{first Filesystem Challenge}.
+    We interface with our filesystem, using the operating systems kernel. 
+    It talks to the filesystem driver and the hardware drivers, to perform operations on the filesystem.
+    The major operation we will be working with here is the \texttt{cd} command.
+    A general rule of thumb in user-interface design is to make commonly used commands as short as possible.
+    In the first Filesystem Challenge you already learned about filenames and their connection to the harddrive. 
+    You should remember, that there are no such things as directories or folders on your actual harddrive.
+    These are just inventions by the filesystem. 
+    We commonly use pre- and suffixes to tag different files on our computer. 
+    While we use suffixes to indicate the functional content of a file, such as \texttt{pdf}, \texttt{docx}, \texttt{jpg}, we use prefixes to indicate the context of the file, such as \texttt{Documents}, \texttt{Downloads} and so on.
+    Hence a directory is just a collection of files with the same prefix.
+    Coming back to the idea of making commonly used commands as short as possible, we are going to focus on the \texttt{cd} command.
+    Modern shells, or terminal interpreters, help us handling long filenames with a lot of prefixes by giving us the impression, that there are no other files on our filesystem, but only files with the same prefix.
+    This is the actual meaning of being in a directory.
+    It makes all files with the same prefix easier to use. 
+    A usual command line prompt looks like this:
+    \begin{center}
+    \texttt{user@host:/home/user\$}
+    \end{center}
+    The \texttt{user} is the username, \texttt{host} is the hostname, and \texttt{/home/user/} is the current directory.
+    Seeing the current directory in the promt is really helpful. 
+    It makes it easy to remember where you are.
+    But it also indicates, that whatever filename you are now using as an input to a command, will get appended to the current directory.
+    In this challenge we will: 
+    
+    
+    \begin{enumerate}
+        \item use the \texttt{cd} command to navigate your filesystem
+        \item figure out which files are in your current directory by running \texttt{ls} in your terminal
+        \item let the terminal print the current directories name by using the \texttt{pwd} command
+    \end{enumerate}
+    \end{chadescription}
+
+    \begin{task}
+    Open your terminal-emulator on your linux system.
+        \begin{questions}
+            \item Type \texttt{pwd} and press \texttt{Enter}. What is the output?
+        \end{questions}
+    You will most likely see, that the output is not what your promt shows you. 
+    It's unfortunate, that we are starting with a special case here.
+    When you fire up your terminal, the present working directory is set to your home directory.
+    The \texttt{~} symbol is a special symbol in the promt, that indicates your home directory.
+    This symbol is the same for all users. 
+    But of course it does not refer to the same directory for every user, but to their very own home directory.
+    Your own home directory of course has a regular name, such as \texttt{/home/<username>}.
+    This is why the output of \texttt{pwd} is \texttt{/home/<username>} and not \texttt{~}.
+    \end{task}
+
+    \begin{task}
+        We will now use the \texttt{ls} command to list all files in our present working directory.
+        \begin{questions}
+            \item Type \texttt{ls} and press \texttt{Enter}. What is the output?
+        \end{questions}
+    \end{task}
+
+    \begin{task}
+        As you may have noticed, the output might be empty.
+        Especially if this is the first time you work with your filesystem.
+        Therefor we will now see what's inside of some other directories. 
+        \begin{questions}
+            \item Let's research the content of the root-directory. Type \texttt{ls /} and press \texttt{Enter}. What is the output?
+            \item Let's also see what's inside of the \texttt{home} directory. Type \texttt{ls /home} and press \texttt{Enter}. What is the output?
+        \end{questions}
+        In the first case, you will see the most basic directory of your filesystem.
+        All of the other directories will be inside of this one.
+        In the second case, you will see the directories of the home directory.
+        All users have their own home directory, which are usually located in the \texttt{/home} directory.
+    \end{task}
+
+    \begin{task}
+        We may also use additional options for the \texttt{ls} command.
+        Let's try some useful ones and you try to explain what these options change in the output!
+        \begin{questions}
+            \item Type \texttt{ls -l} and press \texttt{Enter}. What is the output?
+            \item Type \texttt{ls -lS} and press \texttt{Enter}. What is the output?
+            \item Type \texttt{ls -lh} and press \texttt{Enter}. What is the output?
+            \item Type \texttt{ls -la} and press \texttt{Enter}. What is the output?
+            \item Type \texttt{ls -l /} and press \texttt{Enter}. What is the output?
+            \item Type \texttt{ls -l /home} and press \texttt{Enter}. What is the output?
+        \end{questions}
+    \end{task}
+
+    \begin{task}
+    We will now change the prefix of our current directory.
+    The command for this action, which indicates to the shell, that we want to change the current directory, is the \texttt{cd} command.
+    In the most usual case it takes one argument, which is the name of the new directory.
+        \begin{questions}
+            \item First type the command \texttt{pwd} and remember the output. 
+            \item Now type \texttt{cd /} and press \texttt{Enter}. Now run \texttt{ls -l}. What is the output?
+            \item Run \texttt{cd <the path you saved two steps earlier>} and press \texttt{Enter}. Run \texttt{pwd} again. Where did you end up?
+            \item Go back to the -so called- root-directory, or \texttt{/}. Run \texttt{ls -l} again. Choose one of the directories in your filesystem and type \texttt{cd <directory>}. Now run \texttt{ls -l}. What is the output?
+        \end{questions}
+    \end{task}
+
+    \begin{task}
+    While we are navigating the file system, we sometimes just want to go back to specific directories.
+    There are three very special commands, that can be used to do this.
+        \begin{questions}
+            \item Type \texttt{cd}, so without any parameter and press \texttt{Enter}. Run \texttt{pwd}, where did you go?
+            \item No type \texttt{cd -}, run \texttt{pwd} again, where did you go now?
+            \item Run \texttt{cd ..}, run \texttt{pwd} again, what does this command do?
+        \end{questions}
+    \end{task}
+    \begin{advise}
+        If you get tired of typing the complete path when changing a directory, try tapping the \texttt{tab} key.
+        It will autocomplete the path for you if possible.
+        Are multiple options available and \texttt{tab} can't complete, tap the \texttt{tab} key again for a list of all possibilities!
+    \end{advise}
+\end{challenge}
+    
