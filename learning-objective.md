@@ -1,1 +1,1 @@
-At the end of this challenge, the scholar will be able to use the cd-, ls- and pwd-command to traverse their POSIX filesystem.
+At the end of this challenge, the scholar will be able to use the terminal-emulator to let the computer evaluate basic expressions.
