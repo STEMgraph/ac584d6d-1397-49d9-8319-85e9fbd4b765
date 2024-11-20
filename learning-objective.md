@@ -1,1 +1,0 @@
-At the end of this challenge, the scholar will be able to use the terminal-emulator to let the computer evaluate basic expressions.
