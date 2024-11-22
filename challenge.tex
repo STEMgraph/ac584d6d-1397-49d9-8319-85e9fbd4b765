@@ -54,16 +54,14 @@
 
     \begin{task}
         Just for the record: there are also expressional evaluations for strings.
-        Here are some examples.
-        \begin{questions}
+        Here are some examples:
+        \begin{enumerate}
             \item Type \texttt{expr "hello" = "hello"} and press \texttt{Enter}.
             \item Type \texttt{expr "hello" != "hello"} and press \texttt{Enter}.
-            \item Type \texttt{expr length "hello"} and press \texttt{Enter}. 
-            \item Type \texttt{expr length "hello" = 5} and press \texttt{Enter}.
-            \item Let's find the first occurrence of a character in a string by using the expression \texttt{index <string> <character>}: Type \texttt{expr index "hello" "e"} and press \texttt{Enter}.
-            \item We can also find the last occurrence of a character in a string by using the expression \texttt{rindex <string> <character>}: Type \texttt{expr rindex "terminal emulator" "e"} and press \texttt{Enter}.
-            \item To cut a string, we use the expression \texttt{substr <string> <start> <length>}: Type \texttt{expr substr "terminal-emulator" 3 5} and press \texttt{Enter}.
-            \item Now write an expression, that checks whether a substring starting at a certain position is equal to a certain string. Type \texttt{expr substr "terminal-emulator" 3 5 = "emulat"} and press \texttt{Enter}.
+        \end{enumerate}
+        These expressions are not very useful yet, but they are supposed to show you, that we can also handle strings in sort of a mathematical way.
+        \begin{questions}
+            \item Which other mathematical operations on strings could you imagine?
         \end{questions}
     \end{task}
 
